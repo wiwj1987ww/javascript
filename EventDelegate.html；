@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托/事件代理</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<script type="text/javascript">
+		window.onload=function(){
+			var a = document.getElementsByTagName('ul')[0];
+			
+			a.onclick = function(e){
+				var e = e || window.event;
+				var target = e.target || e.srcElement;
+				console.log(target);
+				console.log(target.nodeName);
+				if (target.nodeName.toLowerCase()=='li') {
+					alert(1);
+				}
+				
+			}
+		}
+    //事件委托是利用事件的冒泡原理来实现的
+	</script>
+</body>
+</html>
