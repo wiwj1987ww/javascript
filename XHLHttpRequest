@@ -1,3 +1,5 @@
+//异步程序在浏览器：
+
 <script>
   $.post('/resource.json',function(data){
     // I/O不会阻塞执行
@@ -10,3 +12,15 @@
   console.log(data);
   
 </script>
+
+//异步程序在服务器：
+
+var fs = require('fs);
+fs.readFile('./resource.json',function(er,data){
+  console.log(data);
+});
+
+
+
+
+
