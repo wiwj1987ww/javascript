@@ -1,0 +1,12 @@
+<script>
+  $.post('/resource.json',function(data){
+    // I/O不会阻塞执行
+    console.log(data);
+  });
+  // 脚本继续执行
+  
+  var data = $.post('/resource.json');
+  //在I/O完成之前程序会被阻塞;
+  console.log(data);
+  
+</script>
