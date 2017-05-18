@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var liEle = document.getElementsByTagName('li');
+			for (var i = 0; i < liEle.length; i++) {
+				// var me = function(o){
+				// liEle[o].onclick=function(){
+				// 	alert(o);
+				// }
+				// }
+				// me(i);
+
+				// 立即执行函数
+				// (function(o){
+				// 	liEle[o].onclick=function(){
+				// 		alert(o);
+				// 	}
+				// })(i);
+
+				(function(){
+					var o = i;//如果不把i赋值给新变量，就无法保存i的值，i会直接显示for遍历完的值；
+					liEle[o].onclick=function(){
+						console.log(o);
+					}
+				})();
+			}
+		}
+	</script>
+	<style type="text/css">
+		li{
+			width: 100px;height: 30px;background-color: #eee;color:gray;margin: 10px auto;text-align: center;line-height: 30px
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>按钮一</li>
+		<li>按钮二</li>
+		<li>按钮三</li>
+	</ul>
+</body>
+</html>
