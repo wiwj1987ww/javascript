@@ -1,0 +1,4 @@
+www.humanstxt.org
+www.humanstxt.org/cn
+格式：
+/*team*/

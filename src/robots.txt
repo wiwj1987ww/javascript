@@ -1,0 +1,4 @@
+user-agent:*
+disallow:/admin/
+
+有些国内的浏览器会无视这个文件
